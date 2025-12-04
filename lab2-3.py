@@ -15,6 +15,7 @@ def golden_section_search(phi_func, a=0, b=1, tol=1e-3, max_iter=100):
     x2 = a + golden_ratio * (b - a)
     f1 = phi_func(x1)
     f2 = phi_func(x2)
+
     for i in range(max_iter):
         if f1 < f2:
             b = x2
