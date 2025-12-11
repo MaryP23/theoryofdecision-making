@@ -7,9 +7,7 @@ def g(x):
     x1, x2 = x
     return x1 + x2 - 1
 def P(x):
-    # Штраф только при нарушении ограничения
-    violation = max(g(x), 0)  # Только положительные значения
-    return violation**2
+    return g(x)**2
 def F(x, k):
     return f(x) + k * P(x)
 def hooke_jeeves(f_func, x0, lamd=0.1, alpha=2.0, eps=1e-6, max_iter=1000):
