@@ -1,8 +1,13 @@
-import math
-import numpy
+from os import path
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+
+
 def f(x):
     x1, x2 = x
-    return 2 * x1**2 + 3 * x2**2 - 2 * numpy.sin((x1 - x2) / 2) + x2
+    return 2 * x1**2 + 3 * x2**2 - 2 * np.sin((x1 - x2) / 2) + x2
 def g(x):
     x1, x2 = x
     return x1 + x2 - 1
@@ -11,7 +16,7 @@ def P(x):
 def F(x, k):
     return f(x) + k * P(x)
 def hooke_jeeves(f_func, x0, lamd=0.1, alpha=2.0, eps=1e-6, max_iter=1000):
-    x = numpy.array(x0, dtype=float)
+    x = np.array(x0, dtype=float)
     iter_count = 0
     for iter_count in range(max_iter):
         if lamd < eps:
