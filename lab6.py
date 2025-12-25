@@ -74,7 +74,7 @@ def print_table(table, iteration, basis):
         header += f" {name:>10} |"
     print(header)
     print("-" * 90)
-    # Строки таблицы
+        # Строки таблицы
     for i in range(len(table)):
         if i == 0:
             row_name = 'W'
